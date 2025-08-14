@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SESマッチング生成ツール</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0078d4">
+<link rel="stylesheet" href="style.css">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
+</head>
+<body>
+
+<h1>SESマッチング文面生成</h1>
+
+<div>
+  <label for="tech">技術分野</label>
+  <input type="text" id="tech" placeholder="例: Java, Python">
+
+  <label for="price">単金</label>
+  <input type="text" id="price" placeholder="例: 70万円">
+
+  <button onclick="generateText()">更新</button>
+</div>
+
+<pre id="output"></pre>
+
+<div style="margin-top:20px;">
+  <button onclick="copyAndOpen()">コピーしてNotebookLMを開く</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
